@@ -13,9 +13,36 @@
     const el = document.createElement('pwa-update');
     document.body.appendChild(el);
  </script>
+ <script> 
+ let deferredPrompt =null;
+ window.addEventListener('beforeinstallpromt',(e)=>{
+   e.preventDefault();
+    deferredPrompt=e;
+});
+  async function install() {
+    if (deferredPrompt) {
+      deferredPrompt.prompt();
+      console.log(deferredPrompt);
+      deferredPrompt.userChoice.then(function (choiceResult) {
+        if (choiceResult.outcome === 'eccepted') {
+          console.log(Your PWA has been installed');
+    } else {
+          console.log(User chose to not install your PWA ');
+    }
+        deferredPrompt = null;
+      }
+      )
+    }
+  }
+
+
+
+
+</script>
 </head>
 
 <body>
+  <button onclick="install()">Install</button>
   <div class="container">
     <div class="add-task">
       <input type="text" class="add-task__input">
