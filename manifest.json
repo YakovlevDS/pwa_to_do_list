@@ -1,7 +1,7 @@
 {
   "name": "PWA toDoList",
   "shot_name": "pwa",
-  "start_url": "/index.html",
+  "start_url": "https://yakovlevds.github.io/pwa_to_do_list/index.html",
   "display": "standalone",
   "background_color": "red",
   "orientation": "any",
