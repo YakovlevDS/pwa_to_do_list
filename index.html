@@ -8,11 +8,14 @@
   <title>Document</title>
   <link rel="stylesheet" href="style.css">
   <link rel="manifest" href="manifest.json">
+
   <script type="module">
     import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
     const el = document.createElement('pwa-update');
     document.body.appendChild(el);
  </script>
+
+
  <script> 
  let deferredPrompt =null;
  window.addEventListener('beforeinstallpromt',(e)=>{
@@ -25,13 +28,13 @@
       console.log(deferredPrompt);
       deferredPrompt.userChoice.then(function (choiceResult) {
         if (choiceResult.outcome === 'eccepted') {
-          console.log(Your PWA has been installed');
+          console.log('Your PWA has been installed');
     } else {
-          console.log(User chose to not install your PWA ');
+          console.log('User chose to not install your PWA ');
     }
         deferredPrompt = null;
       }
-      )
+      );
     }
   }
 
