@@ -7,6 +7,12 @@
   "orientation": "any",
   "icons": [
     {
+      "src": "path/to/maskable_icon.png",
+      "sizes": "196x196",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
       "src": "images/71x71.png",
       "type": "image/png",
       "sizes": "71x71",
