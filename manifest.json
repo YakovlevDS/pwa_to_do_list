@@ -3,7 +3,7 @@
   "shot_name": "pwa",
   "start_url": "/index.html",
   "display": "standalone",
-  "background_color": "#b9b427",
+  "background_color": "red",
   "orientation": "any",
   "icons": [
     {
