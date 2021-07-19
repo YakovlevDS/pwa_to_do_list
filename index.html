@@ -8,6 +8,8 @@
   <meta name="theme-color" content="white">
   <title>Document</title>
   <link rel="stylesheet" href="style.css">
+
+
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="images/192x192.png">
   <script src="pwabuilder-sw.js"></script>
@@ -32,34 +34,36 @@ src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwainstall"
    e.preventDefault();
     deferredPrompt=e;
 });
-  async function install() {
-    if (deferredPrompt) {
-      deferredPrompt.prompt();
-      console.log(deferredPrompt);
-      deferredPrompt.userChoice.then(function (choiceResult) {
-        if (choiceResult.outcome === 'eccepted') {
-          console.log('Your PWA has been installed');
-    } else {
-          console.log('User chose to not install your PWA ');
-    }
-        deferredPrompt = null;
-      }
-      );
-    }
-  }
-</script>
+
+//   async function install() {
+//     if (deferredPrompt) {
+//       deferredPrompt.prompt();
+//       console.log(deferredPrompt);
+//       deferredPrompt.userChoice.then(function (choiceResult) {
+//         if (choiceResult.outcome === 'eccepted') {
+//           console.log('Your PWA has been installed');
+//     } else {
+//           console.log('User chose to not install your PWA ');
+//     }
+//         deferredPrompt = null;
+//       }
+//       );
+//     }
+//   }
+// </script>
 
 
 </head>
 
 <body>
+
   <script async defer>
     var installComponent = document.createElement("pwa-install");
     document.body.appendChild(installComponent);
     installComponent.getInstalledStatus();
   </script>
 
-  <button onclick="install()">Install</button>
+  <!-- <button onclick="install()">Install</button> -->
 
   <div class="container">
     <div class="add-task">
