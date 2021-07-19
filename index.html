@@ -35,21 +35,21 @@ src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwainstall"
     deferredPrompt=e;
 });
 
-//   async function install() {
-//     if (deferredPrompt) {
-//       deferredPrompt.prompt();
-//       console.log(deferredPrompt);
-//       deferredPrompt.userChoice.then(function (choiceResult) {
-//         if (choiceResult.outcome === 'eccepted') {
-//           console.log('Your PWA has been installed');
-//     } else {
-//           console.log('User chose to not install your PWA ');
-//     }
-//         deferredPrompt = null;
-//       }
-//       );
-//     }
-//   }
+  async function install() {
+    if (deferredPrompt) {
+      deferredPrompt.prompt();
+      console.log(deferredPrompt);
+      deferredPrompt.userChoice.then(function (choiceResult) {
+        if (choiceResult.outcome === 'eccepted') {
+          console.log('Your PWA has been installed');
+    } else {
+          console.log('User chose to not install your PWA ');
+    }
+        deferredPrompt = null;
+      }
+      );
+    }
+  }
 // </script>
 
 
@@ -63,7 +63,7 @@ src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwainstall"
     installComponent.getInstalledStatus();
   </script>
 
-  <!-- <button onclick="install()">Install</button> -->
+  <button onclick="install()">Install</button>
 
   <div class="container">
     <div class="add-task">
